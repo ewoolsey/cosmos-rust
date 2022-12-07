@@ -2,7 +2,7 @@ use super::AccessConfig;
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
 
 /// MsgStoreCode submit Wasm code to the system
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgStoreCode {
     /// Sender is the that actor that signed the messages
     pub sender: AccountId,
@@ -45,7 +45,7 @@ impl From<MsgStoreCode> for proto::cosmwasm::wasm::v1::MsgStoreCode {
 }
 
 /// MsgStoreCodeResponse returns store result data.
-#[derive(Clone, Copy, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgStoreCodeResponse {
     /// CodeID is the reference to the stored WASM code
     pub code_id: u64,

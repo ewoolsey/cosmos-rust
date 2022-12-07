@@ -2,7 +2,7 @@ use crate::{proto, tx::Msg, AccountId, Coin, ErrorReport, Result};
 use std::convert::TryFrom;
 
 /// MsgExecuteContract submits the given message data to a smart contract
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgExecuteContract {
     /// Sender is the that actor that signed the messages
     pub sender: AccountId,
@@ -52,7 +52,7 @@ impl From<MsgExecuteContract> for proto::cosmwasm::wasm::v1::MsgExecuteContract 
 }
 
 /// MsgExecuteContractResponse returns execution result data.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgExecuteContractResponse {
     /// Data contains base64-encoded bytes to returned from the contract
     pub data: Vec<u8>,

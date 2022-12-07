@@ -5,7 +5,7 @@ use crate::{
 };
 
 /// ContractCodeHistoryEntry metadata to a contract.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct ContractCodeHistoryEntry {
     /// The source of this history entry.
     pub operation: ContractCodeHistoryOperationType,

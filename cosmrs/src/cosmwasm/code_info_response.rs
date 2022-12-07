@@ -2,7 +2,7 @@ use super::ContractCodeId;
 use crate::{proto, AccountId, ErrorReport, Result};
 
 /// CodeInfoResponse contains code meta data from CodeInfo
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct CodeInfoResponse {
     /// CodeId of the stored contract code.
     pub code_id: ContractCodeId,

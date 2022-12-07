@@ -2,7 +2,7 @@ use super::AccessType;
 use crate::{proto, AccountId, Error, ErrorReport, Result};
 
 /// AccessConfig access control type.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct AccessConfig {
     /// Access type granted.
     pub permission: AccessType,

@@ -2,7 +2,7 @@ use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
 use std::convert::TryFrom;
 
 /// MsgMigrateContract runs a code upgrade/ downgrade for a smart contract
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgMigrateContract {
     /// Sender is the that actor that signed the messages
     pub sender: AccountId,
@@ -48,7 +48,7 @@ impl From<MsgMigrateContract> for proto::cosmwasm::wasm::v1::MsgMigrateContract 
 }
 
 /// MsgMigrateContractResponse returns contract migration result data.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgMigrateContractResponse {
     /// Data contains same raw bytes returned as data from the wasm contract.
     /// (May be empty)

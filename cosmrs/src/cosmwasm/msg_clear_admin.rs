@@ -1,7 +1,7 @@
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
 
 /// MsgClearAdmin removes any admin stored for a smart contract
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgClearAdmin {
     /// Sender is the that actor that signed the messages
     pub sender: AccountId,
@@ -49,7 +49,7 @@ impl From<&MsgClearAdmin> for proto::cosmwasm::wasm::v1::MsgClearAdmin {
 }
 
 /// MsgClearAdminResponse returns empty data
-#[derive(Clone, Copy, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgClearAdminResponse {}
 
 impl Msg for MsgClearAdminResponse {

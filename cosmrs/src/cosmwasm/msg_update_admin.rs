@@ -1,7 +1,7 @@
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
 
 /// MsgUpdateAdmin sets a new admin for a smart contract
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgUpdateAdmin {
     /// Sender is the that actor that signed the messages
     pub sender: AccountId,
@@ -54,7 +54,7 @@ impl From<&MsgUpdateAdmin> for proto::cosmwasm::wasm::v1::MsgUpdateAdmin {
 }
 
 /// MsgUpdateAdminResponse returns empty data
-#[derive(Clone, Copy, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgUpdateAdminResponse {}
 
 impl Msg for MsgUpdateAdminResponse {

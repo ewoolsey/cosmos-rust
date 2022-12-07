@@ -2,7 +2,7 @@ use super::CodeInfoResponse;
 use crate::{proto, ErrorReport, Result};
 
 /// QueryCodeResponse is the response type for the Query/Code RPC method.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct QueryCodeResponse {
     /// If available, the associated code ID metadata.
     pub code_info: Option<CodeInfoResponse>,

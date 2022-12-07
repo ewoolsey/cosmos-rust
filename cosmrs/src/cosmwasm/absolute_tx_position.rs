@@ -2,7 +2,7 @@ use crate::{proto, ErrorReport, Result};
 
 /// AbsoluteTxPosition is a unique transaction position that allows for global
 /// ordering of transactions.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct AbsoluteTxPosition {
     /// BlockHeight is the block the contract was created at
     pub block_height: u64,

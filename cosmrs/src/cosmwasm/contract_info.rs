@@ -5,7 +5,7 @@ use crate::{
 };
 
 /// ContractInfo stores a WASM contract instance
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct ContractInfo {
     /// Reference to the stored Wasm code.
     pub code_id: ContractCodeId,

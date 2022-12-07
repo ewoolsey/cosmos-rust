@@ -6,7 +6,7 @@ use crate::{
 
 /// MsgInstantiateContract create a new smart contract instance for the given
 /// code id.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgInstantiateContract {
     /// Sender is the that actor that signed the messages
     pub sender: AccountId,
@@ -66,7 +66,7 @@ impl From<MsgInstantiateContract> for proto::cosmwasm::wasm::v1::MsgInstantiateC
 }
 
 /// MsgInstantiateContractResponse return instantiation result data
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgInstantiateContractResponse {
     /// Address is the bech32 address of the new contract instance.
     pub address: AccountId,
