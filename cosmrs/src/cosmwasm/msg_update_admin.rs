@@ -1,5 +1,5 @@
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
-
+use serde::{Deserialize, Serialize};
 /// MsgUpdateAdmin sets a new admin for a smart contract
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgUpdateAdmin {

@@ -1,6 +1,6 @@
 use super::ContractCodeId;
 use crate::{proto, AccountId, ErrorReport, Result};
-
+use serde::{Deserialize, Serialize};
 /// CodeInfoResponse contains code meta data from CodeInfo
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct CodeInfoResponse {

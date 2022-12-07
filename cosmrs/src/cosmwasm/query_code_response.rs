@@ -1,5 +1,6 @@
 use super::CodeInfoResponse;
 use crate::{proto, ErrorReport, Result};
+use serde::{Deserialize, Serialize};
 
 /// QueryCodeResponse is the response type for the Query/Code RPC method.
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]

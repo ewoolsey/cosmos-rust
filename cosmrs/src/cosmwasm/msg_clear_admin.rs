@@ -1,5 +1,5 @@
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
-
+use serde::{Deserialize, Serialize};
 /// MsgClearAdmin removes any admin stored for a smart contract
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgClearAdmin {

@@ -1,6 +1,6 @@
 use crate::{proto, tx::Msg, AccountId, Coin, ErrorReport, Result};
+use serde::{Deserialize, Serialize};
 use std::convert::TryFrom;
-
 /// MsgExecuteContract submits the given message data to a smart contract
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgExecuteContract {

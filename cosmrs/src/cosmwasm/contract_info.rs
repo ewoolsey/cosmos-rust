@@ -3,7 +3,7 @@ use crate::{
     proto::{self, traits::ParseOptional},
     AccountId, ErrorReport, Result,
 };
-
+use serde::{Deserialize, Serialize};
 /// ContractInfo stores a WASM contract instance
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct ContractInfo {

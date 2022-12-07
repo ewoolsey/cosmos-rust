@@ -1,6 +1,5 @@
-use super::AccessConfig;
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
-
+use serde::{Deserialize, Serialize};
 /// MsgStoreCode submit Wasm code to the system
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgStoreCode {
@@ -12,7 +11,7 @@ pub struct MsgStoreCode {
 
     /// InstantiatePermission access control to apply on contract creation,
     /// optional
-    pub instantiate_permission: Option<AccessConfig>,
+    pub instantiate_permission: Option<()>,
 }
 
 impl Msg for MsgStoreCode {
@@ -26,10 +25,7 @@ impl TryFrom<proto::cosmwasm::wasm::v1::MsgStoreCode> for MsgStoreCode {
         Ok(MsgStoreCode {
             sender: proto.sender.parse()?,
             wasm_byte_code: proto.wasm_byte_code,
-            instantiate_permission: proto
-                .instantiate_permission
-                .map(TryFrom::try_from)
-                .transpose()?,
+            instantiate_permission: None,
         })
     }
 }
@@ -39,7 +35,7 @@ impl From<MsgStoreCode> for proto::cosmwasm::wasm::v1::MsgStoreCode {
         proto::cosmwasm::wasm::v1::MsgStoreCode {
             sender: msg.sender.to_string(),
             wasm_byte_code: msg.wasm_byte_code,
-            instantiate_permission: msg.instantiate_permission.map(Into::into),
+            instantiate_permission: None,
         }
     }
 }

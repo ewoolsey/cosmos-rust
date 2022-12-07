@@ -1,5 +1,5 @@
 use crate::{proto, ErrorReport, Result};
-
+use serde::{Deserialize, Serialize};
 /// AbsoluteTxPosition is a unique transaction position that allows for global
 /// ordering of transactions.
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]

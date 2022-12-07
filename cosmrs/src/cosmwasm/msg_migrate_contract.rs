@@ -1,6 +1,6 @@
 use crate::{proto, tx::Msg, AccountId, ErrorReport, Result};
+use serde::{Deserialize, Serialize};
 use std::convert::TryFrom;
-
 /// MsgMigrateContract runs a code upgrade/ downgrade for a smart contract
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct MsgMigrateContract {

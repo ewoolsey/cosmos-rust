@@ -3,9 +3,8 @@ use crate::{
     proto::{self, cosmwasm::wasm::v1::ContractCodeHistoryOperationType},
     Error, ErrorReport, Result,
 };
-
 /// ContractCodeHistoryEntry metadata to a contract.
-#[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct ContractCodeHistoryEntry {
     /// The source of this history entry.
     pub operation: ContractCodeHistoryOperationType,

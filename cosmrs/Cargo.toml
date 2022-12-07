@@ -35,7 +35,7 @@ getrandom = { version = "0.2", features = ["js"] }
 hex-literal = "0.3"
 
 [features]
-default   = ["bip32"]
+default   = ["bip32", "cosmwasm"]
 cosmwasm  = ["cosmos-sdk-proto/cosmwasm"]
 dev       = ["rpc", "tokio"]
 grpc      = ["cosmos-sdk-proto/grpc-transport", "grpc-core"]

@@ -3,7 +3,7 @@ use crate::{
     tx::Msg,
     AccountId, Coin, ErrorReport, Result,
 };
-
+use serde::{Deserialize, Serialize};
 /// MsgInstantiateContract create a new smart contract instance for the given
 /// code id.
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
